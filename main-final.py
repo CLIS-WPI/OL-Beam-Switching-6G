@@ -46,8 +46,8 @@ NUM_BEAMS = NUM_ANTENNAS
 ROAD_LENGTH = 500
 BS_POSITION = ROAD_LENGTH / 2
 FREQ = 28e9
-TX_POWER_DBM = 30  # Reduced for more challenge
-NOISE_POWER_DBM = -70  # Increased noise
+TX_POWER_DBM = 31  # Reduced for more challenge
+NOISE_POWER_DBM = -72  # Increased noise
 NUM_TIMESTEPS = 5000  # More training for harder environment
 EVAL_TIMESTEPS = 300
 TIMESTEP_DURATION = 0.01
@@ -55,7 +55,7 @@ BUFFER_SIZE = 50000  # Increased for 100 UEs
 BATCH_SIZE = 128  # Increased for better learning
 LEARNING_RATE = 0.0005
 GAMMA = 0.95
-SNR_THRESHOLD = 15.0  # Increased significantly for challenge
+SNR_THRESHOLD = 12.0  # Increased significantly for challenge
 TARGET_UPDATE_FREQ = 50
 PATH_LOSS_EXPONENT = 2.7  # More severe path loss
 VELOCITY_NORMALIZATION_FACTOR = 30.0
@@ -63,7 +63,7 @@ SNR_NORM_MIN = -10.0
 SNR_NORM_MAX = 50.0
 SMOOTHING_WINDOW = 10
 BANDWIDTH = 100e6
-BLOCKAGE_ATTENUATION_DB = 25.0  # Much more severe blockage
+BLOCKAGE_ATTENUATION_DB = 18.0  # Much more severe blockage
 BASE_SEED = 42
 
 # MAB-UCB Parameters
@@ -122,8 +122,8 @@ def weather_impact(t):
         return -2.0
     return 0.0
 BLOCKAGE_SCENARIOS = [
-    {"P_BB": 0.6, "P_UB": 0.04, "name": "light"},     # More balanced
-    {"P_BB": 0.75, "P_UB": 0.03, "name": "moderate"}, # Challenging but learnable
+    {"P_BB": 0.65, "P_UB": 0.04, "name": "moderate"},
+    {"P_BB": 0.75, "P_UB": 0.03, "name": "severe"},
 ]
 
 # =================== MOBILITY-SPECIFIC METRICS ===================
