@@ -1026,7 +1026,7 @@ def main():
                 prev_blocked = current_blocked.copy()
             
             # Aggregate run results
-            for method in ['drl', 'greedy', 'heuristic']:
+            for method in ['drl', 'greedy', 'mab', 'heuristic']:
                 for metric in eval_metrics[method]:
                     avg_value = np.mean(eval_metrics[method][metric])
                     scenario_results[method][metric].append(avg_value)
