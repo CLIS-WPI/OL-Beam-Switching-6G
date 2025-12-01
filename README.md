@@ -135,13 +135,6 @@ Run unit tests:
 pytest tests/
 ```
 
-## 📈 Results
-
-The framework achieves:
-- **Stability Score**: 0.995 (lower is better, outperforms Vanilla DRL by 25%)
-- **Average SNR**: 15.3 dB (matches MAB baseline)
-- **Coverage Ratio**: 79.8%
-- **Inference Latency**: 0.69 ms (on H100 GPU)
 
 ## 📄 Citation
 
