@@ -1,0 +1,14 @@
+/bin/bash: /home/tanglab/miniconda3/envs/causal-xai/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+==========================================
+OPTIMIZED EXPERIMENTS - H100 MAX PERFORMANCE
+BATCH_SIZE=4096, HIDDEN_SIZE=768, AMP=ON
+==========================================
+[1/4] Hero Result (Balanced, 5 runs)...
+37 %, 3015 MiB
+42 %, 3754 MiB
+✅ Hero complete: TypeError: autocast.__init__() got an unexpected keyword argument 'device_type'
+[2/4] Vanilla Baseline (5 runs)...
+0 %, 14 MiB
+1 %, 757 MiB
+✅ Vanilla complete
+[3/4] Ablation Study (5 runs)...

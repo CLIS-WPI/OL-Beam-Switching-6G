@@ -1,0 +1,44 @@
+\subsection{System Setup}
+
+\label{subsec:System_Setup}
+
+The system setup involves a single-cell 6G downlink scenario simulated using the Sionna library \cite{sionna}. A base station (BS) equipped with a $N_A=64$ antenna uniform linear array (ULA) serves a dense deployment of $K=100$ mobile user equipments (UEs). The BS operates at $f_c = 28$ GHz with a transmit power $P_{tx} = 38$ dBm and system bandwidth $B = 100$ MHz. UEs move within a 500m area following complex trajectories to simulate a dynamic environment. The channel vector between the BS and UE $k$ at time step $t$ is denoted by $h_k(t) \in \mathbb{C}^{N_A}$, generated using a Rayleigh block fading model. The path loss $PL_k(t)$ follows the 3GPP UMi (Urban Micro) model with breakpoint distance, and the effective channel is $\tilde{h}_k(t) = \sqrt{PL_k(t)} h_k(t)$.
+
+The BS employs beam switching using a codebook $\mathcal{W} = \{w_1, \dots, w_{N_b}\}$ containing $N_b = N_A = 64$ pre-defined DFT beams, where $w_b \in \mathbb{C}^{N_A}$ and $||w_b||^2 = 1$. At each time step $t$, the BS selects a beam index $b_k(t) \in \{1, \dots, N_b\}$ for each UE $k$.
+
+%\enlargethispage{1\baselineskip}
+
+\begin{figure}[!t]
+ \centering
+ \includegraphics[width=1\columnwidth]{Images/IMG_5957.jpeg} % Consider updating this image
+ \caption{Adaptive beam switching in a dense 6G scenario: A BS selects beams for 100 mobile users under dynamic blockage.}
+ \label{fig:6G_scenario}
+\end{figure}
+
+\subsection{Blockage Model}
+
+\label{subsec:Blockage_Model}
+
+To capture environmental dynamics, we introduce a time-correlated probabilistic blockage model. Let $b_{k,h}(t)$ be the beam index for the direct angular path to UE $k$. The state of this path, $S_k(t) \in \{\text{Blocked, Unblocked}\}$, transitions according to a Markov chain. We evaluate the system's resilience under two distinct scenarios:
+
+\begin{itemize}
+    \item \textbf{Default Blockage:} $P(S_{k}(t+1)=\text{Blocked}|S_{k}(t)=\text{Blocked}) = P_{BB} = 0.25$ and $P(S_{k}(t+1)=\text{Blocked}|S_{k}(t)=\text{Unblocked}) = P_{UB} = 0.08$.
+    \item \textbf{High Blockage:} $P_{BB} = 0.90$ and $P_{UB} = 0.10$, representing a more challenging, contested environment.
+\end{itemize}
+
+If the path-optimal beam $b_{k,h}(t)$ is chosen while the path is blocked, the signal incurs an additional attenuation of $ATT_{block} = 12$ dB.
+
+\subsection{Signal Model and Performance Metrics}
+
+\label{subsec:Signal_Model}
+
+The received Signal-to-Noise Ratio (SNR) for UE $k$ at time $t$ is calculated based on the selected beam $w_{b_k(t)}$, the effective channel $\tilde{h}_k(t)$, and any blockage attenuation. The achievable throughput $R_k(t)$ is then derived from the Shannon capacity formula. We evaluate performance using the following key metrics:
+
+\begin{itemize}
+    \item \textbf{Throughput:} The average data rate across all users in Mbps.
+    \item \textbf{SNR:} The average received SNR across all users in dB.
+    \item \textbf{Reliability:} The percentage of time steps where the SNR for a user is above a minimum service threshold of $6$ dB.
+    \item \textbf{Accuracy:} The percentage of time steps the SNR is above a target quality threshold of $14$ dB.
+    \item \textbf{Beam Switches:} The total number of times a beam is changed for any user in a time step, indicating policy stability and signaling overhead.
+\end{itemize}
+

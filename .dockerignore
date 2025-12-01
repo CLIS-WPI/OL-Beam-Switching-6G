@@ -1,0 +1,52 @@
+# Git
+.git
+.gitignore
+.github
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info
+dist
+build
+
+# Virtual environments
+venv/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Results and outputs
+*.png
+*.jpg
+*.pdf
+*.csv
+*.log
+results/
+outputs/
+plots/
+
+# Tests
+tests/
+.pytest_cache/
+coverage/
+*.cover
+.coverage
+.coverage.*
+
+# Documentation
+*.md
+!README.md
+
+# CI/CD
+.github/
+

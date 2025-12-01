@@ -1,0 +1,30 @@
+\section{Proposed Approach: Online Learning for Adaptive Beam Switching}
+
+\label{sec:Proposed_Approach}
+
+To address the beam switching challenges in dense and dynamic 6G environments, we propose an adaptive framework based on Online Learning. Specifically, we use Deep Q-Learning (DQL) enhanced with a dueling architecture and prioritized sampling. This approach enables the BS to learn an effective, real-time beam selection policy by directly interacting with the environment, eliminating the need for offline training on potentially outdated datasets or computationally expensive retraining cycles.
+
+Our framework employs a DRL agent that acts as the BS controller, observing the system state and selecting beam indices for all 100 UEs simultaneously. The state representation for each UE is crucial for performance and has been specifically enhanced to capture deep environmental and temporal dynamics. The state for UE $k$ at time $t$, $s_k(t)$, is an 8-dimensional vector that includes:
+
+\begin{itemize}
+    \item \textbf{Instantaneous physical data:} its relative angle to the BS ($\theta_k(t)$), normalized distance, and normalized velocity.
+    \item \textbf{Recent performance feedback:} its experienced SNR in the previous step, normalized to the range [0, 1].
+    \item \textbf{Rich temporal context:} five enhanced features capturing (i) current blockage status, (ii) recent blockage frequency over the last 5 time steps, (iii) SNR trend over the last 3 time steps, (iv) beam persistence (duration on current beam), and (v) normalized velocity for mobility awareness.
+\end{itemize}
+
+This enhanced state, particularly the inclusion of temporal features derived from blockage history, SNR trends, and beam persistence, empowers the agent to move beyond reactive decisions and learn predictive policies based on obstruction patterns and mobility dynamics, a key innovation of our approach. The joint action $a(t)$ is the set of selected beam indices $\{b_1(t), \ldots, b_K(t)\}$ for all users.
+
+The agent's policy, $\pi(a|s)$, is learned by approximating the optimal action-value function, $Q^*(s,a)$, using a deep neural network with parameters $\theta$. To effectively process the rich state vector, we employ a \textbf{Dueling DQN} architecture with a hidden size of 512. The state vector for each UE is fed into a series of fully connected layers: the first two layers each have 512 units, followed by a third layer with 256 units, all with ReLU activation and BatchNorm regularization. The network then splits into two streams: a value stream (estimating state value) and an advantage stream (estimating action advantages), which are combined to produce Q-values for each of the $N_b=64$ possible beams for each user. Dropout (15\%) is applied to prevent overfitting. The agent's goal is to learn a policy that maximizes the long-term cumulative reward defined in Equation~\eqref{eq:reward}.
+
+To ensure stable and efficient online learning in our large-scale simulation, we incorporate several key DQL enhancements:
+
+\begin{itemize}
+    \item \textbf{Prioritized Experience Replay (PER):} A large replay buffer (size 100,000) stores recent transitions. Instead of uniform sampling, transitions are sampled based on their TD-error, prioritizing more surprising or informative experiences to accelerate learning. Importance Sampling (IS) weights are used to correct for the sampling bias.
+    
+    \item \textbf{Target Network:} A separate, periodically updated target network, $Q_{\text{target}}(s, a; \theta^-)$, is used to generate stable target values for the Q-learning updates, decoupling the target from the online network and preventing learning instability. The target network is updated every 100 training steps.
+    
+    \item \textbf{Advanced Training:} We utilize the Adam optimizer with a learning rate of $3 \times 10^{-4}$ and a batch size of 512, optimized for H100 GPU efficiency while maintaining learning stability. The exploration rate, $\epsilon$, decays from 0.7 to 0.05 over the course of training to shift from exploration to exploitation, with a decay factor of 0.9997.
+\end{itemize}
+
+Algorithm~\ref{alg:dql_beam_switching_per} provides a high-level summary of the training process. This comprehensive approach allows our DRL agent to learn complex temporal dependencies through the enhanced state representation and develop a sophisticated, stable beam switching policy tailored for dynamic, high-density 6G environments.
+

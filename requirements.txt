@@ -1,0 +1,20 @@
+# Core dependencies
+torch>=2.0.0
+tensorflow>=2.19.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Sionna for 6G simulation
+sionna>=1.2.1
+sionna-rt>=0.18.0
+
+# Visualization
+matplotlib>=3.7.0
+
+# Utilities
+importlib-resources>=5.12.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+

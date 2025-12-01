@@ -1,30 +1,38 @@
 {
-    "name": "TensorFlow NGC (Sionna)",
-    // Your Docker image
-    "image": "nvcr.io/nvidia/tensorflow:24.04-tf2-py3",
+    "name": "H100 Dev Container (Sionna)",
 
-    // Runtime options for Docker
+    // Instead of using a pre-built image, we build from the Dockerfile in the project root.
+    // This ensures exact Python 3.12 and H100 configuration.
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "context": ".."
+    },
+
+    // Specific configurations for H100 GPUs
     "runArgs": [
-        "--gpus=all",
-        "--shm-size=1g",
+        "--gpus=all",        // Enable access to all GPUs
+        "--shm-size=8g",     // Increase shared memory (1GB is often insufficient for H100 workloads)
         "--ulimit=memlock=-1"
-        // Do not set --user here; let VS Code manage it or use the default
     ],
 
-    // Project folder mount
-    // ${localWorkspaceFolder} refers to your project folder
-    "mounts": [
-        "source=${localWorkspaceFolder},target=/workspace/${localWorkspaceFolderBasename},type=bind,consistency=cached"
-    ],
-    "workspaceFolder": "/workspace/${localWorkspaceFolderBasename}",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    },
 
-    // The user VS Code should use inside the container
-    // You can remove this line to use the container default (probably root)
-    // Or specify a particular user if present in the image (like 'nvidia' or 'tf')
+    // Project folder mount configuration
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+    "workspaceFolder": "/workspace",
+
+    // Use root user for unrestricted package installation
     "remoteUser": "root",
 
-    // (Optional) Commands to run after container creation
-    "postCreateCommand": "pip install --no-cache-dir sionna torch matplotlib scipy pandas"
-
-    // Other settings ...
+    // Commands to run after container creation
+    // Since core packages are in the Dockerfile, we just ensure the environment is ready here
+    "postCreateCommand": "pip install --upgrade pip && echo 'Environment Ready for H100!'"
 }
