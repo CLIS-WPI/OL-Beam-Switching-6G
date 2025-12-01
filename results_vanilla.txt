@@ -1,151 +1,0 @@
-2025-11-24 20:14:52.097508: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
-To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/attr_value.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/tensor.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/resource_handle.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/tensor_shape.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/types.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/full_type.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/function.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/node_def.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/op_def.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/graph.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/graph_debug_info.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/versions.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/config.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at xla/tsl/protobuf/coordination_config.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/cost_graph.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/step_stats.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/allocation_description.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/framework/tensor_description.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/cluster.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-/home/tanglab/.local/lib/python3.10/site-packages/google/protobuf/runtime_version.py:98: UserWarning: Protobuf gencode version 5.28.3 is exactly one major version older than the runtime version 6.31.1 at tensorflow/core/protobuf/debug.proto. Please update the gencode to avoid compatibility violations in the next runtime release.
-  warnings.warn(
-GPU: PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
-PyTorch: cuda
-======================================================================
-Running Mode: Vanilla-Throughput
-Description: Baseline: Pure SNR Maximization
-======================================================================
-
-Scenario: realistic
-
-[Run 1/5]
-Training...
-  Training |████████████--------------------------------------| 25.0% ε=0.606  Training |█████████████████████████-------------------------| 50.0% ε=0.368  Training |█████████████████████████████████████-------------| 75.0% ε=0.223  Training |██████████████████████████████████████████████████| 100.0% ε=0.135
-Evaluating...
-  Evaluation |████████------------------------------------------| 16.7%   Evaluation |████████████████----------------------------------| 33.3%   Evaluation |█████████████████████████-------------------------| 50.0%   Evaluation |█████████████████████████████████-----------------| 66.7%   Evaluation |█████████████████████████████████████████---------| 83.3%   Evaluation |██████████████████████████████████████████████████| 100.0% 
-  Completed in 132.7s
-  Stability: 1.450, Coverage: 56.8%
-
-[Run 2/5]
-Training...
-  Training |████████████--------------------------------------| 25.0% ε=0.606  Training |█████████████████████████-------------------------| 50.0% ε=0.368  Training |█████████████████████████████████████-------------| 75.0% ε=0.223  Training |██████████████████████████████████████████████████| 100.0% ε=0.135
-Evaluating...
-  Evaluation |████████------------------------------------------| 16.7%   Evaluation |████████████████----------------------------------| 33.3%   Evaluation |█████████████████████████-------------------------| 50.0%   Evaluation |█████████████████████████████████-----------------| 66.7%   Evaluation |█████████████████████████████████████████---------| 83.3%   Evaluation |██████████████████████████████████████████████████| 100.0% 
-  Completed in 130.2s
-  Stability: 0.974, Coverage: 56.6%
-
-[Run 3/5]
-Training...
-  Training |████████████--------------------------------------| 25.0% ε=0.606  Training |█████████████████████████-------------------------| 50.0% ε=0.368  Training |█████████████████████████████████████-------------| 75.0% ε=0.223  Training |██████████████████████████████████████████████████| 100.0% ε=0.135
-Evaluating...
-  Evaluation |████████------------------------------------------| 16.7%   Evaluation |████████████████----------------------------------| 33.3%   Evaluation |█████████████████████████-------------------------| 50.0%   Evaluation |█████████████████████████████████-----------------| 66.7%   Evaluation |█████████████████████████████████████████---------| 83.3%   Evaluation |██████████████████████████████████████████████████| 100.0% 
-  Completed in 130.3s
-  Stability: 1.051, Coverage: 56.8%
-
-[Run 4/5]
-Training...
-  Training |████████████--------------------------------------| 25.0% ε=0.606  Training |█████████████████████████-------------------------| 50.0% ε=0.368  Training |█████████████████████████████████████-------------| 75.0% ε=0.223  Training |██████████████████████████████████████████████████| 100.0% ε=0.135
-Evaluating...
-  Evaluation |████████------------------------------------------| 16.7%   Evaluation |████████████████----------------------------------| 33.3%   Evaluation |█████████████████████████-------------------------| 50.0%   Evaluation |█████████████████████████████████-----------------| 66.7%   Evaluation |█████████████████████████████████████████---------| 83.3%   Evaluation |██████████████████████████████████████████████████| 100.0% 
-  Completed in 130.2s
-  Stability: 0.921, Coverage: 65.4%
-
-[Run 5/5]
-Training...
-  Training |████████████--------------------------------------| 25.0% ε=0.606  Training |█████████████████████████-------------------------| 50.0% ε=0.368  Training |█████████████████████████████████████-------------| 75.0% ε=0.223  Training |██████████████████████████████████████████████████| 100.0% ε=0.135
-Evaluating...
-  Evaluation |████████------------------------------------------| 16.7%   Evaluation |████████████████----------------------------------| 33.3%   Evaluation |█████████████████████████-------------------------| 50.0%   Evaluation |█████████████████████████████████-----------------| 66.7%   Evaluation |█████████████████████████████████████████---------| 83.3%   Evaluation |██████████████████████████████████████████████████| 100.0% 
-  Completed in 130.2s
-  Stability: 1.079, Coverage: 57.1%
-
-======================================================================
-FINAL RESULTS
-======================================================================
-
-======================================================================
-SCENARIO: REALISTIC
-MODE: Vanilla-Throughput
-======================================================================
-
-Stability Score:
-----------------------------------------------------------------------
-  DRL               :  1.095 ± 0.186
-  GREEDY            :  1.304 ± 0.003
-  MAB               :  1.208 ± 0.004
-
-Coverage Ratio:
-----------------------------------------------------------------------
-  DRL               :  58.5% ±  3.4%
-  GREEDY            :  92.7% ±  0.1%
-  MAB               :  60.1% ±  0.3%
-
-Service Interruptions:
-----------------------------------------------------------------------
-  DRL               : 12.457 ± 0.853
-  GREEDY            :  5.224 ± 0.118
-  MAB               : 12.928 ± 0.077
-
-Fast UE Coverage:
-----------------------------------------------------------------------
-  DRL               :  29.9% ±  2.0%
-  GREEDY            :  86.9% ±  0.3%
-  MAB               :  33.8% ±  0.4%
-
-Handover Failures:
-----------------------------------------------------------------------
-  DRL               :  4.959 ± 2.386
-  GREEDY            :  8.344 ± 0.163
-  MAB               :  3.743 ± 0.076
-
-Average SNR (dB):
-----------------------------------------------------------------------
-  DRL               :    9.6 ±  1.1 dB
-  GREEDY            :   18.4 ±  0.0 dB
-  MAB               :   10.0 ±  0.1 dB
-
-10th Percentile SNR:
-----------------------------------------------------------------------
-  DRL               :   -4.9 ±  0.6 dB
-  GREEDY            :    6.9 ±  0.1 dB
-  MAB               :   -4.6 ±  0.1 dB
-
-Fairness Index:
-----------------------------------------------------------------------
-  DRL               :  0.382 ± 0.037
-  GREEDY            :  0.725 ± 0.001
-  MAB               :  0.398 ± 0.004
-
-======================================================================
-EXPERIMENT COMPLETE
-======================================================================

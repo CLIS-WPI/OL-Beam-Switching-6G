@@ -4,27 +4,19 @@ __pycache__/
 *$py.class
 *.so
 .Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
 *.egg-info/
-.installed.cfg
-*.egg
+dist/
+build/
 
-# Virtual environments
-venv/
-env/
-ENV/
-.venv
+# Results and logs
+results_*.txt
+*.log
+*.png
+*.pdf
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
 
 # IDE
 .vscode/
@@ -33,42 +25,16 @@ ENV/
 *.swo
 *~
 
-# Results and outputs
-*.png
-*.jpg
-*.jpeg
-*.pdf
-*.csv
-*.log
-results/
-outputs/
-plots/
-*.pkl
-*.pickle
-
-# Jupyter Notebook
-.ipynb_checkpoints
-*.ipynb
-
 # OS
 .DS_Store
 Thumbs.db
 
+# Environment
+venv/
+env/
+ENV/
+
 # Temporary files
 *.tmp
 *.bak
-*.swp
-txt.txt
-
-# Model checkpoints
-checkpoints/
-models/
-*.pt
-*.pth
-*.h5
-*.ckpt
-
-# Data files
-data/
-*.dat
-
+*~
